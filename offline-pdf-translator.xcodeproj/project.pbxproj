@@ -134,7 +134,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\nRUNTIME=\"${SRCROOT}/TranslatorRuntime\"\nDEST=\"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TranslatorRuntime\"\nif [ ! -x \"${RUNTIME}/python/bin/python3\" ] || [ ! -f \"${RUNTIME}/ct2_bridge.py\" ] || [ ! -f \"${RUNTIME}/model_catalog.json\" ]; then\n  echo \"error: Bundled translator runtime missing. Run: Tools/build_translator_runtime.sh\" >&2\n  exit 1\nfi\nmkdir -p \"${DEST}\"\nrsync -a --delete \\\n  --exclude '_tmp' \\\n  --exclude 'models' \\\n  --exclude '.DS_Store' \\\n  \"${RUNTIME}/\" \"${DEST}/\"\nmkdir -p \"${DEST}/models\"\necho \"Copied TranslatorRuntime into app resources (models download on demand)\"\n";
+			shellScript = "set -e\nRUNTIME=\"${SRCROOT}/TranslatorRuntime\"\nDEST=\"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TranslatorRuntime\"\nif [ ! -x \"${RUNTIME}/python/bin/python3\" ] || [ ! -f \"${RUNTIME}/ct2_bridge.py\" ] || [ ! -f \"${RUNTIME}/model_catalog.json\" ]; then\n  echo \"error: Bundled translator runtime missing. Run: Tools/build_translator_runtime.sh\" >&2\n  exit 1\nfi\nmkdir -p \"${DEST}\"\n# Anchor /models so we only skip TranslatorRuntime/models (download cache),\n# not python site-packages like ctranslate2/models.\nrsync -a --delete \\\n  --exclude '_tmp' \\\n  --exclude '/models' \\\n  --exclude '.DS_Store' \\\n  \"${RUNTIME}/\" \"${DEST}/\"\nmkdir -p \"${DEST}/models\"\necho \"Copied TranslatorRuntime into app resources (models download on demand)\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

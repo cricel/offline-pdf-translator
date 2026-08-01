@@ -30,14 +30,20 @@ curl -L --fail -o "$OUT/_tmp/python.tar.gz" "$PY_URL"
 tar -xzf "$OUT/_tmp/python.tar.gz" -C "$OUT/_tmp"
 mv "$OUT/_tmp/python" "$OUT/python"
 
-echo "==> Installing ctranslate2 + sentencepiece + pymupdf"
+echo "==> Installing ctranslate2 + sentencepiece + pymupdf + pyyaml"
 "$OUT/python/bin/python3" -m pip install -q --upgrade pip
-"$OUT/python/bin/python3" -m pip install -q "ctranslate2==4.8.1" "sentencepiece==0.2.2" "pymupdf==1.26.6"
+# pyyaml is required at import time by ctranslate2.converters.marian
+"$OUT/python/bin/python3" -m pip install -q \
+  "ctranslate2==4.8.1" \
+  "sentencepiece==0.2.2" \
+  "pymupdf==1.26.6" \
+  "pyyaml==6.0.2"
 # Drop accidental transitive tooling left by pip/resolvers (keeps the .app smaller).
+# Keep pyyaml — ctranslate2 imports it when loading converters.
 "$OUT/python/bin/python3" -m pip uninstall -y \
   requests urllib3 charset-normalizer idna certifi \
   hf-xet rich typer httpx httpcore anyio click \
-  markdown-it-py mdurl pygments shellingham pyyaml \
+  markdown-it-py mdurl pygments shellingham \
   >/dev/null 2>&1 || true
 
 if [[ ! -f "$OUT/ct2_bridge.py" ]]; then
