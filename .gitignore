@@ -1,0 +1,10 @@
+# macOS / Xcode
+.DS_Store
+DerivedData/
+*.xcuserstate
+xcuserdata/
+
+# Large bundled offline runtime (rebuild with Tools/build_translator_runtime.sh)
+TranslatorRuntime/python/
+TranslatorRuntime/models/
+TranslatorRuntime/_tmp/

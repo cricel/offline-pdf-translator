@@ -1,0 +1,99 @@
+{
+  "languages": [
+    { "code": "en", "name": "English" },
+    { "code": "zh", "name": "Chinese" },
+    { "code": "es", "name": "Spanish" },
+    { "code": "fr", "name": "French" },
+    { "code": "de", "name": "German" },
+    { "code": "it", "name": "Italian" },
+    { "code": "ru", "name": "Russian" },
+    { "code": "ja", "name": "Japanese" },
+    { "code": "ko", "name": "Korean" }
+  ],
+  "pairs": [
+    {
+      "from": "en",
+      "to": "zh",
+      "repo": "gaudi/opus-mt-en-zh-ctranslate2",
+      "approx_mb": 150
+    },
+    {
+      "from": "zh",
+      "to": "en",
+      "repo": "gaudi/opus-mt-zh-en-ctranslate2",
+      "approx_mb": 150
+    },
+    {
+      "from": "en",
+      "to": "es",
+      "repo": "gaudi/opus-mt-en-es-ctranslate2",
+      "approx_mb": 150
+    },
+    {
+      "from": "es",
+      "to": "en",
+      "repo": "gaudi/opus-mt-es-en-ctranslate2",
+      "approx_mb": 150
+    },
+    {
+      "from": "en",
+      "to": "fr",
+      "repo": "gaudi/opus-mt-en-fr-ctranslate2",
+      "approx_mb": 150
+    },
+    {
+      "from": "fr",
+      "to": "en",
+      "repo": "gaudi/opus-mt-fr-en-ctranslate2",
+      "approx_mb": 150
+    },
+    {
+      "from": "en",
+      "to": "de",
+      "repo": "gaudi/opus-mt-en-de-ctranslate2",
+      "approx_mb": 150
+    },
+    {
+      "from": "de",
+      "to": "en",
+      "repo": "gaudi/opus-mt-de-en-ctranslate2",
+      "approx_mb": 150
+    },
+    {
+      "from": "en",
+      "to": "it",
+      "repo": "gaudi/opus-mt-en-it-ctranslate2",
+      "approx_mb": 150
+    },
+    {
+      "from": "it",
+      "to": "en",
+      "repo": "gaudi/opus-mt-it-en-ctranslate2",
+      "approx_mb": 150
+    },
+    {
+      "from": "en",
+      "to": "ru",
+      "repo": "gaudi/opus-mt-en-ru-ctranslate2",
+      "approx_mb": 150
+    },
+    {
+      "from": "ru",
+      "to": "en",
+      "repo": "gaudi/opus-mt-ru-en-ctranslate2",
+      "approx_mb": 150
+    },
+    {
+      "from": "ja",
+      "to": "en",
+      "repo": "gaudi/opus-mt-ja-en-ctranslate2",
+      "approx_mb": 150
+    },
+    {
+      "from": "ko",
+      "to": "en",
+      "repo": "gaudi/opus-mt-ko-en-ctranslate2",
+      "approx_mb": 150
+    }
+  ]
+}
